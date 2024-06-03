@@ -6,7 +6,7 @@ import (
 	"errors"
 )
 
-func utf8ToUtf16LE(uft8String string) ([]byte, error) {
+func Utf8ToUtf16LE(uft8String string) ([]byte, error) {
 	runes := []rune(uft8String)
 	buf := new(bytes.Buffer)
 
@@ -19,7 +19,7 @@ func utf8ToUtf16LE(uft8String string) ([]byte, error) {
 	return buf.Bytes(), nil
 }
 
-func utf16LEToUtf8(utf16LEBytes []byte) (string, error) {
+func Utf16LEToUtf8(utf16LEBytes []byte) (string, error) {
 	if len(utf16LEBytes)%2 != 0 {
 		return "", errors.New("UTF-8 length must be even")
 	}
